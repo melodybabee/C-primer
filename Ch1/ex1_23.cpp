@@ -21,6 +21,5 @@ int main()
 		std :: cout << "the num of "<< item1.isbn() << " is: "<< num << std:: endl;
 	}
 }
-
 //cin中 有ISBN编号，册数，价格
 //cout中 有ISBN编号，册数，总价，单价
