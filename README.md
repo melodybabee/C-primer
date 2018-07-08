@@ -1,2 +1,2 @@
 # C++ primer
-Begin with C++
+Begin with C++.
