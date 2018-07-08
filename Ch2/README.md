@@ -175,6 +175,48 @@ if（*p)//如果p指向的对象的值存在，为true,否则为false
 
 因为void可以表示任何类型，而int和long的类型不同，不能用指针指向类型不同的值的地址。
 
+* EX2_25
+
+(a) int* ip,i, &r = i;//ip is a point of int type, i is int, r is a reference which refers to i.
+
+(b) int i, *ip = 0; // i is int, ip is a NULL pointer of int type.
+
+(c) int* ip, ip2;// ip a pointer to int, ip2 is an int.
+
+* EX2_26
+
+        const int buf;//illegel, const must be initialized
+		 int cnt = 0;//legel
+		 const int sz = cnt;//legel
+		 ++cnt;//legel
+		 ++sz;//illegel, unchanged
+		 
+* EX2_27
+
+        (a) int i = -1, &r = 0;//illegel,r is a reference, so it must have an object.
+        (b) int *const p2 = &i2;//legel
+        (c) const int i = -1, &r = 0;//重点注意，在如果是const类型，可以使引用的值为0
+        (d) const int *const p3 = &i2;//legel
+        (e) const int *p1 = &i2;//legel
+        (f) const int &const r2;//illegel
+        (g) const int i2 = i, &r = i;//legel
+        
+* EX2_28
+
+        (a) int i, *const cp;//illegel, i is int, cp is const pointer, should be initialized
+        (b) int *p1, *const p2;//illegel, p2 shoule be initialized
+        (c) const int ic, &r = ic;//illegel, ic should be initialized
+        (d) const int *const p3;//illegel, p3 should be initialized
+        (e)coust int *p;//legel, p points to const 
+               
+区分const int *p 和 int *const p;前者是指向常量的指针，即其指向的值不可以通过改变指针的指向而改变，但是指向的值本身可以通过其他途径改变。而且指向常量的指针不一定指向的就是常量。
+
+后者为常量指针,必须进行初始化，其指向的地址不可变。
+
+* EX2_29 
+
+重新做练习29
+
 
 
 	
