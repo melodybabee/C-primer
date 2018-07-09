@@ -215,7 +215,34 @@ if（*p)//如果p指向的对象的值存在，为true,否则为false
 
 * EX2_29 
 
-重新做练习29
+        前提条件(主要看类型，其中有的不合法）：
+        	int i;
+        	const int ic;
+        	int *p1;
+        	int *const p2;
+        	int *const p3;
+        	
+        以下哪些不合法？ 
+        （a) i = ic;//legel, put value of ic to i
+         (b) p1 = p3;//illegel, p1 is not a const pointer
+         (c) p1 = &ic;//illegel, p1 is not a const pointer
+         (d) p3 = &ic;//illegel, p3 is not a pointer points to conste, should be const int* p3;
+         (e) p2 = p1;//illegel, p2 is a const pointer
+         (f) ic = *p3;//ic is a const int
+         
+* EX2_30
+
+说明是被声明成了顶层const 还是 底层const
+
+    const int v2 = 0;//low-level const
+    int v1 = v2; 
+    int *p1 = &v1, &ri = v1;
+    const int *p2 = &v2;//low-level const
+    *const p3 = &i, &r2 = v2;//p3 is top-level const, r2 is low-level const
+    
+        
+        	
+        	
 
 
 
