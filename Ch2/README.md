@@ -234,14 +234,25 @@ if（*p)//如果p指向的对象的值存在，为true,否则为false
 
 说明是被声明成了顶层const 还是 底层const
 
-    const int v2 = 0;//low-level const
+    const int v2 = 0;//top-level const
     int v1 = v2; 
-    int *p1 = &v1, &ri = v1;
+    int *p1 = &v1, &r1 = v1;
     const int *p2 = &v2;//low-level const
-    *const p3 = &i, &r2 = v2;//p3 is top-level const, r2 is low-level const
-    
-        
-        	
+    const *const p3 = &i, &r2 = v2;//p3 left most is  low-level cont, right most is top-level const, r2 is low-level const
+
+顶层const和底层const的区别是
+
+顶层的const可以表示任意的对象是常量，而底层的const常常与指针和引用等复合类型的基本类型部分有关。
+
+* EX2_31
+
+在上一题的基础之上，需要判断以下是否合法
+
+    r1 = v2;//legel, v2 is a const num, put its value to r1
+    p1 = p2;//illegel,p2 is a pointer to const, p2 is a low-level const but p1 doesn't
+    p2 = p1;//legel, we can convert int* to const int*
+    p1 = p3;//illegel,p3 is a top-level const pointer
+    p2 = p3;//legel,p2 and p3 have the same low-level const        	
         	
 
 
