@@ -253,6 +253,36 @@ if（*p)//如果p指向的对象的值存在，为true,否则为false
     p2 = p1;//legel, we can convert int* to const int*
     p1 = p3;//illegel,p3 is a top-level const pointer
     p2 = p3;//legel,p2 and p3 have the same low-level const        	
+    
+* EX2_32
+
+判断下列代码是否有效：
+
+     int null = 0, *p = null; 
+     //illegel, 可以写成 int *p = nullptr;
+     //或者 int *p = NULL;
+     //或者 int *p = 0;
+     
+* EX2_33
+
+给出几个定义，判断运行结果
+
+     int i = 0, &r = i;
+     auto a = r;
+     
+     const int ci = i, &cr = ci;
+     auto b = ci;
+     auto c = cr;
+     auto d = &i;
+     auto e = &ci;
+     auto &g = ci;
+     
+     a = 42;//a = 42
+     b = 42;//b = 42 const int b = ci;
+     c = 42;//c = 42
+     d = 42;//illegel,d is a int pointer, *d = 42
+     e = 42;//illegel,e is a const int pointer, const int* e
+     g = 42;//g = 0,g is a const int& which is bound to ci
         	
 
 
