@@ -5,8 +5,9 @@ int main()
 {
 	Sales_item item;
 	Sales_item plus;
-	while(std :: cin >> item){
+	if(std :: cin >> item){
 		while(std::cin >> plus){
+
 		if(item.isbn()==plus.isbn())
 			item += plus;
 		else{
@@ -15,7 +16,9 @@ int main()
 			}
 		}
 		std::cout << item << std::endl;
+		
 	}
+	
 	return 0;
 
 
@@ -30,3 +33,4 @@ int main()
 * ./a.out <books.txt>result.txt
 *上面一句表示把books.txt中的语句作为输入，把打印结果作为输入写到result.txt文件中
 *如果想要看result.txt中的结果，命令行执行 cat result.txt
+*/
