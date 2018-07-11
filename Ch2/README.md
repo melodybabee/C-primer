@@ -284,6 +284,43 @@ if（*p)//如果p指向的对象的值存在，为true,否则为false
      e = 42;//illegel,e is a const int pointer, const int* e
      g = 42;//g = 0,g is a const int& which is bound to ci
         	
+* EX2_37
+
+假设赋值是会产生引用的一类典型表达式，引用的类型就是左值的类型，e.g. if i is int, i = x is int&.
+
+     int a = 3, b = 4;
+     decltype(a) c = a;// c is int
+     decltype(a = b) d = a;//d is int&  	
+     
+     //a is  3, b is 4, c is 3, d is 3
+     // a = b 会更改数据类型为int&,因此d的类型为int&,本题的考点也在这里。
+     
+     
+* EX2_38
+
+decltype 和 auto 的异同在哪里：
+
+decltype是指选择并返回操作值的数据类型
+
+auto是指自动生成所需数据的数据类型，会删除top-level的const
+
+相同：
+    
+    int i = 5;
+    auto b = i;//b is a int type
+    decltype(i) b = i;// b is a int type, should declaim the 'i' type
+    
+不同：
+
+    const int i = 5;
+    auto b = 5;// b is a int, dropping the top-level const
+    decltype b = i; //b is a const int
+    
+    another example:
+    &r = i;
+    auto c = r;
+    decltype (r) d = r;
+        
 
 
 
