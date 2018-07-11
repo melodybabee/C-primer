@@ -7,7 +7,6 @@ int main()
 	Sales_item plus;
 	if(std :: cin >> item){
 		while(std::cin >> plus){
-
 		if(item.isbn()==plus.isbn())
 			item += plus;
 		else{
