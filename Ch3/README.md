@@ -51,3 +51,16 @@ getline会读取空白字符，直到遇到换行符之后会把输入流中的i
 不合法，空的vector不能用下标。可以改成：
 
    	vector<int> ivec{0};//一个元素，值为0，不可用（0）,这个表示0个元素，没有意义
+   	
+* EX3_26
+
+在100页的二分搜索程序中，为什么用的是
+
+    mid = beg +(end - beg)/2;
+    不是 mid = (beg + end)/2
+因为 end - beg 表示了两指针之间的距离，不可用beg + end。
+
+标准解释：Because the iterator of vector don't define the + operator between the two iterators. beg + end is illegal. We can only use the subtraction between the two iterators.
+
+迭代器不会定义+,在两个迭代器之间只可以用减法。
+
