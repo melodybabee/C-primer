@@ -64,3 +64,58 @@ getline会读取空白字符，直到遇到换行符之后会把输入流中的i
 
 迭代器不会定义+,在两个迭代器之间只可以用减法。
 
+* EX3_27
+
+txt_size是一个无参数的函数，返回值是int,下列哪个定义是非法的？
+
+    unsigned buf_size = 1024;
+    (1)int ia[buf_size];//illegel,because buf_size is not a constexpr.
+    e.g. constexpr int mf = 20;//it is constexpr.
+    constexpr int limit = mf + 1;//it is constexpr.
+    (2)int ia[4*7-14];//legel
+    (3)int ia[txt_size()];//if txt_size is not a cosnt,  it is illegel, vise versa
+    (4)char st[11] = "fundamental";//legel, at least 12 spaces
+    
+* EX3_29
+
+数组相比与vector的缺点在于长度不可变，不可以在array之后添加元素。
+
+* EX3_30
+
+下列代码中的错误在于：
+     
+    constexpr sizt_t array_size = 10;
+    int ia[array_saze];
+    for(size_t ix =1; ix <= array_size;++ix)
+    	ia[ix] = ix;
+错误在于ix应该小于array_size.
+
+* EX3_33
+
+如果不初始化scores,因为array是内置类型，所以scores是undefined,它的值是不确定的
+
+* EX3_34
+
+p1 and p2是指向同一个数组中的元素，下面程序的功能是什么？在什么情况之下是非法的？
+
+    p1 += p2 - p1;
+功能是使p1每次都到p2的位置中去，p1 = p2。当p2超出array最后一个空值的范围之后非法。
+
+* EX3_37
+
+下面的程序是什么意义，输出的结果是什么？
+
+    const char ca[]= {'h','e','l','l','o'};
+    const char *cp = ca;
+    while(*cp){
+    	cout << *cp << endl;
+    	++cp;
+    }
+遍历ca[],输出这个数组中的字符，结果hello.在C-style中，读取字符会以\0结尾，直到读到\0才会停止。
+
+* EX3_38
+
+因为指针指向的是随机的地址，是和内存有关的，与值无关。
+
+可以参考下：https://stackoverflow.com/questions/2935038/why-cant-i-add-pointers
+
