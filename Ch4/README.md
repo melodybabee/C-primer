@@ -14,6 +14,6 @@
 
 * EX4_3
 
-余地的英文是trade-off.
+权衡的英文是trade-off.
 
 这种trade-off是必要的，因为快速、高效率往往是C++的优势之一，我们需要编译器提供给我们高效的运算速度。但是最好在初步学习的时候不使用undefined behaviors,eg.cout << i << ++i << endl;就是错误的。
