@@ -133,3 +133,5 @@ ptr是指向int的指针，vec的类型是vector<int>,ival的类型是int,下面
     (a) ptr != 0 && *ptr++ //ptr不为空且检查ptr的值，ptr++的值是不会改变pte本身的
     (b) ival ++ && ival // ival和ival+1是否为真
     (c) vec[ival++] <= vec[ival] //ival为index的位置的值小于等于ival加1位置的值，会出现错误。改正：vec[ival] <= vec[ival+1];
+    
+* EX4_20
