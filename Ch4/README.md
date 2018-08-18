@@ -135,3 +135,5 @@ ptr是指向int的指针，vec的类型是vector<int>,ival的类型是int,下面
     (c) vec[ival++] <= vec[ival] //ival为index的位置的值小于等于ival加1位置的值，会出现错误。改正：vec[ival] <= vec[ival+1];
     
 * EX4_20
+
+
