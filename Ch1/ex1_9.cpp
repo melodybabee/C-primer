@@ -3,11 +3,11 @@
 int main(){
 	int i = 50;
 	int sum = 0;
-	while (i <= 100){
+	while (i <= 200){
 		sum += i;
 		++i;
 	}
-	std::cout<< "the sum from 50 to 100 is " << sum << std :: endl;
+	std::cout<< "the sum from 50 to 200 is " << sum << std :: endl;
 
 	return 0;
 }
