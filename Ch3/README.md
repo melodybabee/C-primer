@@ -118,4 +118,3 @@ p1 and p2是指向同一个数组中的元素，下面程序的功能是什么�
 因为指针指向的是随机的地址，是和内存有关的，与值无关。
 
 可以参考下：https://stackoverflow.com/questions/2935038/why-cant-i-add-pointers
-
