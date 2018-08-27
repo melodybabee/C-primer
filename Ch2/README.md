@@ -321,7 +321,3 @@ auto是指自动生成所需数据的数据类型，会删除top-level的const
     auto c = r;
     decltype (r) d = r;
         
-
-
-
-	
