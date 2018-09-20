@@ -135,5 +135,15 @@ ptr是指向int的指针，vec的类型是vector<int>,ival的类型是int,下面
     (c) vec[ival++] <= vec[ival] //ival为index的位置的值小于等于ival加1位置的值，会出现错误。改正：vec[ival] <= vec[ival+1];
     
 * EX4_20
-Loading......
+
+假设iter的类型是vector<string>::iterator，说明下列表达式是否合法，如合法，含义是什么？若不合法，错在何处？
+
+vector<string>::iterator表明iter的类型是指向vector中string的指示器，是指针类型，指向了string的地址
+
+    (a) * iter++;//++的运算顺序在*之前，return iter的值，再++iter的位置【需要注意】
+    (b)(*iter)++;//illegal，*iter是string类型，不可增值
+    (c) *iter.empty();//illegal，iter -> empty();or(*iter).empty();
+    (d)iter -> empty();//the value of iter is empty or not
+    (e)++*iter;//illegel, same as (b)
+    (f)iter++ -> empty();//
 
